@@ -1,0 +1,49 @@
+.page{
+    background-image: url("https://media.istockphoto.com/id/499582295/vector/school-science-doodle-set-2-hand-drawn-vector-illustration.jpg?s=612x612&w=0&k=20&c=PNmg0WSxUcVJyA0iDMetaHuW-n7q8-Sd7tnuHcAEL3k=");
+}
+
+.wrapper{
+    display: grid;
+    width: 75%;
+    height: 871px;
+    margin: 5px auto;
+    grid-template-areas: 
+    
+    "one one one"
+    "two two three"
+    "two two three"
+    "five five four"
+    "five five four";
+
+    grid-template-rows: 20% 20% 20% 20% 20%;
+
+    grid-template-columns: 33% 33% 33%;
+}
+
+.one{
+    grid-area: one;
+    background-color: #8ca0ff;
+   
+}
+
+.two{
+    grid-area: two;
+    background-color: #ffa08c;
+}
+
+.three{
+    grid-area: three;
+    margin: 5px;
+    /* background-color: #ffff64; */
+}
+
+.four{
+    grid-area: four;
+    background-color: #8cffa0;
+}
+
+.five{
+    grid-area: five;
+    background-color: aqua;
+}
+
