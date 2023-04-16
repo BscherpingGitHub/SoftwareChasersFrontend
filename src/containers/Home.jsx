@@ -1,6 +1,9 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import Box from "../components/Box"
+import InfoCard from "../components/InfoCard";
+import AboutCard from "../components/AboutCard"
+import VideoBox from "../components/VideoBox"
+import InputBox from "../components/InputBox"
+
 require("./Home.css")
 
 const Home = () => {
@@ -8,20 +11,16 @@ const Home = () => {
     return(
         
     <div class = "page">
-        <NavBar />
         <div class="wrapper">
-            <div class="one"></div>
-            <div class="two">Two</div>
-            <div class="three"><Box /></div>
-            <div class="four">Four</div>
-            <div class="five">Five</div>
+            <div class="logo"></div>
+            <div class="two"><InfoCard /></div>
+            <div class="three"><AboutCard/></div>
+            <div class="four"><VideoBox/></div>
+            <div class="five"><InputBox/></div>
         </div>
     </div>
 
     )
-
-
 }
-
 
 export default Home
