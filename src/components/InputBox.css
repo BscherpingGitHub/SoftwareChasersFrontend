@@ -1,7 +1,12 @@
 .inputWrapper{
-    width: 20%;
+    width: 100%;
     height: 100%;
     background-image: url("/public/paper\ background.avif");
     border-radius: 25px;
     padding: 25px;
+}
+
+.readyText{
+    font-family: fantasy;
+    font-size: 30px;
 }
