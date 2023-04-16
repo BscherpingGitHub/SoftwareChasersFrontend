@@ -1,0 +1,7 @@
+.inputWrapper{
+    width: 20%;
+    height: 100%;
+    background-image: url("/public/paper\ background.avif");
+    border-radius: 25px;
+    padding: 25px;
+}
