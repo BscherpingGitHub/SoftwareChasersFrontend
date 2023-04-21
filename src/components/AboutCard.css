@@ -1,40 +1,40 @@
-.explanation{
-    font-family: fantasy;
-    font-size: 30px;
+.explanation {
+  font-family: fantasy;
+  font-size: 30px;
 }
 
-.aboutDiv{
-    width: 100%;
-    height: 100%;
-    background-image: url("/public/paper\ background.avif");
-    border-radius: 25px;
-    padding: 20px;
-    padding-top: 50px;
+.aboutDiv {
+  width: 100%;
+  height: 100%;
+  background-image: url("/public/paper\ background.avif");
+  border-radius: 25px;
+  padding: 20px;
+  padding-top: 50px;
 }
 
-.arrow{
-    display: inline;
-    float: right;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: -30px;
-    height: 150px;
-    width: 170px;
-    background-image: url("/public/leftarrow.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
+.arrow {
+  display: inline;
+  float: right;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: -30px;
+  height: 150px;
+  width: 170px;
+  background-image: url("/public/leftarrow.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.arrowWrapper{
-    display: inline;
-    margin-right: 5px;
-    margin-left: 5px;
-    height: 250px;
-    width: 250px;
+.arrowWrapper {
+  display: inline;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 250px;
+  width: 250px;
 }
 
-.arrowText{
-    font-family: fantasy;
-    font-size: 30px;
-    display: inline;
+.arrowText {
+  font-family: fantasy;
+  font-size: 30px;
+  display: inline;
 }
