@@ -3,6 +3,7 @@
   width: 85%;
   margin-top: 20px;
   padding: 5px;
+  overflow: hidden;
   background-image: url("/public/paper\ background.avif");
   background-size: 100%;
   border-radius: 25px;

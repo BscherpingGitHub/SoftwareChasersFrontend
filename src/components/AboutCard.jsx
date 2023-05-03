@@ -3,8 +3,8 @@ require("./AboutCard.css");
 
 function AboutCard() {
   return (
-    <div class="aboutDiv">
-      <p class="explanation">
+    <div className="aboutDiv">
+      <p className="explanation">
         Some informational text about how this whole thing worksSome
         informational text about how this whole thing worksSome informational
         text about how this whole thing worksSome informational text about how
@@ -12,12 +12,13 @@ function AboutCard() {
         worksSome informational text about how this whole thing worksSome
         informational text about how this whole thing works
       </p>
-      <div class="arrowWrapper">
-        <p class="arrowText">
+      <div className="arrowWrapper">
+        <br></br>
+        <p className="arrowText">
           If you would like a more in depth explanation then watch this video by
           Numberphile!
         </p>
-        <div class="arrow"></div>
+        <img src="leftarrow.png" alt="arrow" class = "arrow"/>
       </div>
     </div>
   );

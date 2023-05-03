@@ -1,6 +1,7 @@
 .inputWrapper {
   width: 100%;
   height: 100%;
+  overflow: scroll;
   background-image: url("/public/paper\ background.avif");
   border-radius: 25px;
   padding: 25px;
@@ -9,4 +10,14 @@
 .readyText {
   font-family: fantasy;
   font-size: 30px;
+}
+
+.pdfWrapper{
+
+  width: 100%;
+  height: 100%;
+  background-image: url("/public/paper\ background.avif");
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 10px;
 }
