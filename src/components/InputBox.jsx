@@ -9,7 +9,6 @@ import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import dataUrl from "./dataUrlVar";
 import superagent from 'superagent'
-import Decimal from "decimal.js";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 require("./InputBox.css");
 
@@ -21,7 +20,6 @@ const InputBox = () => {
 
   const [showPDF, setShowPDF] = useState(false);
   const [url, setUrl] = useState(null);
-  const [blob, setBlob] = useState(null);
   const [numErr, setNumErr] = useState(null);
   const [number, setNumber] = useState();
   const [chance, setChance] = useState();
@@ -52,21 +50,24 @@ const InputBox = () => {
 
       var tempNum = document.getElementById("number").value
 
-      var percent = new Decimal(((1 - (document.getElementById("number").value ** (-0.3)))))
-
-      //(((1 - (number ** (-0.3))) ** (1.5 * (10 ** 18))))
-
-      // percent.toFixed(5);
-
-      console.log(percent);
-      
-      setChance(percent);
+      if(tempNum.length <= 30){
+        setChance(0);
+      }else if(tempNum.length <= 35){
+        setChance(1);
+      }else if(tempNum.length <= 40){
+        setChance(15);
+      }else if(tempNum.length <= 45){
+        setChance(45);
+      }else if(tempNum.length <= 50){
+        setChance(76);
+      }else if(tempNum.length <= 60){
+        setChance(94);
+      }
 
       if(tempNum.length < 67){
         setNumErr(true);
       }else{
         generatePDF();
-        
       }
 
         // await superagent
@@ -133,19 +134,15 @@ const InputBox = () => {
     setShowPDF(true);
   }
 
-const showError = () => {
-
-  
-}
-
-// var chance = (((1 - (number ** -0.3)) ** (1.5* (10 ** 18))) * 100)
-
     return (
     
     <div>
     {
     showPDF ? 
       <div className="pdfWrapper">
+        <p className="readyText">Congratulations! The number you chose has a 99% chance of never being thought of. 
+        Claim your certification below. 
+        You can choose from a custom 67Zeros certificate or a generic certificate.</p>
         <a href={'' + url} target="_blank" rel="noreferrer">Generate Personalized PDF Certification</a>
         <br></br>
         <a href="/generic-certificate.jpg" download>Generate Generic JPG Certification</a>
@@ -153,15 +150,15 @@ const showError = () => {
     :
     numErr ? 
     <div className="inputWrapper">
-      <p className="readyText">You picked the number {number} was determined to have a {chance}% chance of being thought of. 
+      <p className="readyText">You picked the number {number} was determined to have a {chance}% chance of never being thought of. 
         This was calculated by the equations on the help page. </p>
-        <Button
+        <a href="/Help"><Button
         variant="primary"
         style={{ float: "right", marginTop: "10px", height: "54px", width: "125px" }}
-        // onClick={}
       >
         Help
       </Button>
+      </a>
       <Button
         variant="primary"
         style={{ float: "right", marginTop: "10px", height: "54px", width: "125px", marginRight: "5px"}}
