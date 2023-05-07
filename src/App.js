@@ -1,11 +1,18 @@
 import Home from "./containers/Home";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 require("./index.css");
 
 function App() {
   return (
-    <div style={{ height: "100%", width: "100%" }}>
+    <BrowserRouter>
+    {/* <div style={{ height: "100%", width: "100%" }}>
       <Home />
-    </div>
+    </div> */}
+    <Routes>
+    <Route Component={Home} exact path = '/'/>
+    {/* <Route Component={Help} exact path = '/Help'/> */}
+    </Routes>
+    </BrowserRouter>
   );
 }
 

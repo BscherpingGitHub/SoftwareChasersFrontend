@@ -8,9 +8,8 @@ import Button from "react-bootstrap/Button";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import dataUrl from "./dataUrlVar";
-import { saveAs } from 'file-saver';
 import superagent from 'superagent'
-// import axios from "axios";
+import Decimal from "decimal.js";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 require("./InputBox.css");
 
@@ -23,21 +22,13 @@ const InputBox = () => {
   const [showPDF, setShowPDF] = useState(false);
   const [url, setUrl] = useState(null);
   const [blob, setBlob] = useState(null);
+  const [numErr, setNumErr] = useState(null);
+  const [number, setNumber] = useState();
+  const [chance, setChance] = useState();
 
   var first;
   var last;
-  var number;
-
-  // await SuperAgent
-  //           .post('http://ec2-3-129-19-122.us-east-2.compute.amazonaws.com:5000/datasender')
-  //           .send({"firstName": first,
-  //                   "lastName": last,
-  //                   "number": number})
-  //           .set('X-API-Key', 'foobar')
-  //           .set('Accept', 'application/json')
-  //           .then(res => {
-  //               console.log(JSON.stringify(res.body))
-  //           })  
+  // var number;
 
   const LoadingButton = () => {
     const [isLoading, setLoading] = useState(false);
@@ -52,36 +43,44 @@ const InputBox = () => {
 
     const handleClick = async () => {
       setLoading(true);
-      console.log(document.getElementById("firstName").value);
-      console.log(document.getElementById("lastName").value);
-      console.log(document.getElementById("number").value);
+      // console.log(document.getElementById("firstName").value);
+      // console.log(document.getElementById("lastName").value);
+      // console.log(document.getElementById("number").value);
       first = document.getElementById("firstName").value;
       last = document.getElementById("lastName").value;
-      number = document.getElementById("number").value;
+      setNumber(document.getElementById("number").value);
 
-      if(number.length < 1){
-        window.alert("Number not large enough, please try again!");
-        document.getElementById("number").value = "";
+      var tempNum = document.getElementById("number").value
+
+      var percent = new Decimal(((1 - (document.getElementById("number").value ** (-0.3)))))
+
+      //(((1 - (number ** (-0.3))) ** (1.5 * (10 ** 18))))
+
+      // percent.toFixed(5);
+
+      console.log(percent);
       
-        
+      setChance(percent);
+
+      if(tempNum.length < 67){
+        setNumErr(true);
       }else{
-
         generatePDF();
-
-        await superagent
-            .get(`http://acc5c208dae842ed3.awsglobalaccelerator.com:5000/check_data/${first}/${last}/${number}`) //http://ec2-3-129-19-122.us-east-2.compute.amazonaws.com:5000/check_data/${first}/${last}/${number}
-            // https://pokeapi.co/api/v2/pokemon/ditto
-            // http://127.0.0.1:5000/check_data/fname/lname/number
-            // .send({"fname": first,
-            //         "lname": last,
-            //         "number": number})
-            .set('X-API-Key', 'foobar')
-            .set('Accept', 'application/json')
-            .then(res => {
-                console.log(JSON.stringify(res.body))
-            }).catch(err => console.log(err))
-
+        
       }
+
+        // await superagent
+        //     .get(`http://acc5c208dae842ed3.awsglobalaccelerator.com:5000/check_data/${first}/${last}/${number}`)
+        //     // https://pokeapi.co/api/v2/pokemon/ditto
+        //     // http://127.0.0.1:5000/check_data/fname/lname/number
+        //     // .send({"fname": first,
+        //     //         "lname": last,
+        //     //         "number": number})
+        //     .set('X-API-Key', 'foobar')
+        //     .set('Accept', 'application/json')
+        //     .then(res => {
+        //         console.log(JSON.stringify(res.body))
+        //     }).catch(err => console.log(err))
     }
 
     return (
@@ -129,73 +128,48 @@ const InputBox = () => {
         const tempUrl = URL.createObjectURL(blob);
         console.log(tempUrl);
         setUrl(tempUrl);
-        // blob = blob.slice(0, blob.size, "image/png")
-        // setBlob(blob);
-        // console.log(blob)
-
       });
-      
+    
     setShowPDF(true);
   }
 
-//   const downloadImg = () => {
-//     blobToDataURL(blob, (dataUrl) => {
-//       console.log(dataUrl);
-//     });
-//   }
+const showError = () => {
 
-//   const blobToDataURL = (blob, callback) => {
-//     var a = new FileReader();
-//     a.onload = (e) => {callback(e.target.result);}
-//     a.readAsDataURL(blob);
-//     console.log(a);
-
-//     const b = document.createElement('a');
-
-//     b.setAttribute('download', 'reactflow.png');
-//     b.setAttribute('href', dataUrl);
-//     b.click();
-//     // saveAs(a, "image.pdf");
-
-// }
-// var canvasUrl;
-
-// const createCanvas = () => {
   
-//   const canvas = document.createElement("canvas");
-//   const ctx = canvas.getContext("2d");
-//   ctx.fillStyle = "#FF0000";
-//   const img = new Image();
+}
 
-//   canvas.width = 1000;
-//   canvas.height = 750;
+// var chance = (((1 - (number ** -0.3)) ** (1.5* (10 ** 18))) * 100)
 
-//   img.src = "certificate.png";
-
-//   img.onLoad = () => {
-//     ctx.drawImage(img,  0, 0, 500, 500);
-//   }
-
-//   ctx.fill();
-//   canvasUrl = canvas.toDataURL("image/png");
-//   console.log(canvasUrl)
-//   const link = document.createElement('a');
-
-//   link.download = "canvas.png";
-
-//   link.href = canvasUrl;
-
-//   // link.click();
-// }
-
-  return (
+    return (
+    
     <div>
-    {showPDF ? 
+    {
+    showPDF ? 
       <div className="pdfWrapper">
         <a href={'' + url} target="_blank" rel="noreferrer">Generate Personalized PDF Certification</a>
         <br></br>
         <a href="/generic-certificate.jpg" download>Generate Generic JPG Certification</a>
       </div>
+    :
+    numErr ? 
+    <div className="inputWrapper">
+      <p className="readyText">You picked the number {number} was determined to have a {chance}% chance of being thought of. 
+        This was calculated by the equations on the help page. </p>
+        <Button
+        variant="primary"
+        style={{ float: "right", marginTop: "10px", height: "54px", width: "125px" }}
+        // onClick={}
+      >
+        Help
+      </Button>
+      <Button
+        variant="primary"
+        style={{ float: "right", marginTop: "10px", height: "54px", width: "125px", marginRight: "5px"}}
+        onClick={() => {setShowPDF(false); setNumErr(false)}}
+      >
+        Try again
+      </Button>
+    </div>
     :
     <div className ="inputWrapper">
       <Row className="g-2">
@@ -229,6 +203,7 @@ const InputBox = () => {
     }
     </div>
   );
+  
 }
 
 export default InputBox;
