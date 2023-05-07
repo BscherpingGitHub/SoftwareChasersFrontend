@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/SoftwareChasersFrontend/static/css/main.d9d7a923.css",
+    "main.js": "/SoftwareChasersFrontend/static/js/main.4f2a364f.js",
+    "static/media/einstein_gif.gif": "/SoftwareChasersFrontend/static/media/einstein_gif.b66273811b96b6ac6c33.gif",
+    "static/media/paper background.avif": "/SoftwareChasersFrontend/static/media/paper background.dacaca9d35767cb30780.avif",
+    "static/media/67ZerosLogo.PNG": "/SoftwareChasersFrontend/static/media/67ZerosLogo.7d621f35a15c43a3762e.PNG",
+    "static/media/main page background.jpg": "/SoftwareChasersFrontend/static/media/main page background.04f46ee7440ef1f56718.jpg",
+    "index.html": "/SoftwareChasersFrontend/index.html",
+    "main.d9d7a923.css.map": "/SoftwareChasersFrontend/static/css/main.d9d7a923.css.map",
+    "main.4f2a364f.js.map": "/SoftwareChasersFrontend/static/js/main.4f2a364f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9d7a923.css",
+    "static/js/main.4f2a364f.js"
+  ]
+}
