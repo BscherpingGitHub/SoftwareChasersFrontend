@@ -6,8 +6,8 @@ require("./index.css");
 function App() {
   return (
       <Routes>
-        <Route Component={Home} exact path = '/'/>
-        <Route Component={Help} exact path = '/Help'/>
+        <Route Component={Home} exact path = '/SoftwareChasersFrontend'/>
+        <Route Component={Help} exact path = '/SoftwareChasersFrontend/Help'/>
       </Routes>
   );
 }

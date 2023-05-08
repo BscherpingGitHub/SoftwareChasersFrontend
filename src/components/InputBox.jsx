@@ -97,6 +97,8 @@ const InputBox = () => {
   }
 
   const generatePDF = () => {
+
+    var tempNumber = document.getElementById("number").value
     
     var dd = {
   
@@ -115,9 +117,10 @@ const InputBox = () => {
         {
             text: first + " " + last,
             absolutePosition: {x: 300, y:290},
+            noWrap: false
         },
         {
-            text: number,
+            text: tempNumber,
             absolutePosition: {x: 160, y: 340},
         },   
     ]  
@@ -146,13 +149,20 @@ const InputBox = () => {
         <a href={'' + url} target="_blank" rel="noreferrer">Generate Personalized PDF Certification</a>
         <br></br>
         <a href="../../public/generic-certificate.jpg" download>Generate Generic JPG Certification</a>
+        <Button
+        variant="primary"
+        style={{ float: "right", marginBottom: "20px", height: "40px", width: "125px", marginRight: "20px"}}
+        onClick={() => {setShowPDF(false); setNumErr(false)}}
+      >
+        Reset
+      </Button>
       </div>
     :
     numErr ? 
     <div className="inputWrapper">
       <p className="readyText">You picked the number {number} was determined to have a {chance}% chance of never being thought of. 
         This was calculated by the equations on the help page. </p>
-        <a href="/Help"><Button
+        <a href="/SoftwareChasersFrontend/Help"><Button
         variant="primary"
         style={{ float: "right", marginTop: "10px", height: "54px", width: "125px" }}
       >
