@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SoftwareChasersFrontend/static/css/main.727f5c80.css",
+    "main.css": "/SoftwareChasersFrontend/static/css/main.f0f1f176.css",
     "main.js": "/SoftwareChasersFrontend/static/js/main.eacfa9a3.js",
     "static/media/einstein_gif.gif": "/SoftwareChasersFrontend/static/media/einstein_gif.b66273811b96b6ac6c33.gif",
     "static/media/paper background.avif": "/SoftwareChasersFrontend/static/media/paper background.dacaca9d35767cb30780.avif",
@@ -9,11 +9,11 @@
     "static/media/probability-graph.PNG": "/SoftwareChasersFrontend/static/media/probability-graph.8313a94a1f30cc017b28.PNG",
     "static/media/numbers-graph.PNG": "/SoftwareChasersFrontend/static/media/numbers-graph.7c969a2f0cd7c42bb182.PNG",
     "index.html": "/SoftwareChasersFrontend/index.html",
-    "main.727f5c80.css.map": "/SoftwareChasersFrontend/static/css/main.727f5c80.css.map",
+    "main.f0f1f176.css.map": "/SoftwareChasersFrontend/static/css/main.f0f1f176.css.map",
     "main.eacfa9a3.js.map": "/SoftwareChasersFrontend/static/js/main.eacfa9a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.727f5c80.css",
+    "static/css/main.f0f1f176.css",
     "static/js/main.eacfa9a3.js"
   ]
 }
