@@ -6,7 +6,7 @@ const Help = () => {
 
     return(
         
-    <div className = "Hpage">
+    <div id = "Hpage">
         <div className ="Hwrapper">
             <div className ="Hone">
                 &nbsp;
@@ -80,7 +80,7 @@ const Help = () => {
                     We can see that if you pick a number less than 45 (* 10^ 45), you have less than 50% chance of the number being thought of.  
                     Now after looking at this graph, do you think you can find a number which will give a 99% chance of never being thought of? 
                 </p>
-                <a href="/SoftwareChasersFrontend"><Button
+                <a href="#page"><Button
                     variant="primary"
                     style={{ float: "right", marginTop: "230px", marginRight: "20px", height: "54px", width: "125px" }}
                     >

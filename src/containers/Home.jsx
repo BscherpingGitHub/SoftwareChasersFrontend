@@ -3,14 +3,15 @@ import InfoCard from "../components/InfoCard";
 import AboutCard from "../components/AboutCard"
 import VideoBox from "../components/VideoBox"
 import InputBox from "../components/InputBox"
+import Help from "./Help"
 
 require("./Home.css")
 
 const Home = () => {
 
     return(
-        
-    <div className = "page">
+    <>
+    <div id = "page">
         <div className ="wrapper">
             <div className ="logo"></div>
             <div className ="two"><InfoCard /></div>
@@ -19,6 +20,8 @@ const Home = () => {
             <div className ="five"><InputBox/></div>
         </div>
     </div>
+    <Help/>
+    </>
 
     )
 }

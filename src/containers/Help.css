@@ -6,12 +6,12 @@ body,
   width: 100%;
 }
 
-.Hpage {
+#Hpage {
   background-image: url("/public/main\ page\ background.jpg");
-  overflow: auto;
+  /* overflow: auto; */
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 150%;
 }
 
 .Hwrapper {
@@ -19,7 +19,7 @@ body,
   width: 100%;
   height: 100%;
   margin: auto;
-  background-image: linear-gradient(180deg, black, transparent);
+  /* background-image: linear-gradient(180deg, black, transparent); */
   grid-template-areas:
     "Hone Hone Hone"
     "Htwo Htwo Htwo"
@@ -29,7 +29,6 @@ body,
 
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
-
 
 .Hone {
   grid-area: Hone;

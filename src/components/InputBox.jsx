@@ -162,7 +162,8 @@ const InputBox = () => {
     <div className="inputWrapper">
       <p className="readyText">You picked the number {number} was determined to have a {chance}% chance of never being thought of. 
         This was calculated by the equations on the help page. </p>
-        <a href="/SoftwareChasersFrontend/Help"><Button
+        <a href="#Hpage">
+          <Button
         variant="primary"
         style={{ float: "right", marginTop: "10px", height: "54px", width: "125px" }}
       >
@@ -177,7 +178,7 @@ const InputBox = () => {
         Try again
       </Button>
     </div>
-    :
+      :
     <div className ="inputWrapper">
       <Row className="g-2">
         <p className ="readyText">Ready?</p>

@@ -1,5 +1,5 @@
 .info {
-  height: 80%;
+  height: 76%;
   width: 85%;
   margin-top: 20px;
   padding: 5px;
@@ -11,7 +11,7 @@
 
 .about {
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 5px;
   font-family: fantasy;
 }
@@ -27,7 +27,7 @@
 .gif {
   display: inline;
   float: right;
-  margin-right: 400px;
+  margin-right: 600px;
   margin-top: 5px;
   height: 75px;
   width: 70px;

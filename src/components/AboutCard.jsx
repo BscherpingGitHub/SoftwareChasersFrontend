@@ -19,7 +19,7 @@ function AboutCard() {
           If you would like a more in depth explanation then watch this video by
           Numberphile, or click the help button!
         </p>
-        <a href="/SoftwareChasersFrontend/Help"><Button
+        <a href="#Hpage"><Button
           variant="primary"
           style={{ float: "right", marginTop: "5px", height: "54px", width: "125px" }}
           >
