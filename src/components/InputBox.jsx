@@ -145,7 +145,7 @@ const InputBox = () => {
         You can choose from a custom 67Zeros certificate or a generic certificate.</p>
         <a href={'' + url} target="_blank" rel="noreferrer">Generate Personalized PDF Certification</a>
         <br></br>
-        <a href="/generic-certificate.jpg" download>Generate Generic JPG Certification</a>
+        <a href="../../public/generic-certificate.jpg" download>Generate Generic JPG Certification</a>
       </div>
     :
     numErr ? 

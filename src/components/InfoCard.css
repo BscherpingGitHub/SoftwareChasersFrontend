@@ -1,9 +1,9 @@
 .info {
-  height: 92%;
+  height: 80%;
   width: 85%;
   margin-top: 20px;
   padding: 5px;
-  overflow: hidden;
+  overflow: auto;
   background-image: url("/public/paper\ background.avif");
   background-size: 100%;
   border-radius: 25px;

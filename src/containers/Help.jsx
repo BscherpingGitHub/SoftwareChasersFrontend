@@ -72,10 +72,6 @@ const Help = () => {
                 Now, the graph shows a number around 22 and 34 (number *10^22 ; number * 10^34) are pretty low and therefore, would be a good choice. 
                 But we are thinking of a number that has never been thought of. Let’s consult the probability graph below.  
                 </p>
-                
-                
-                
-                
             </div>
 
             <div className = "Hthree">

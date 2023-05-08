@@ -1,6 +1,6 @@
 import Home from "./containers/Home";
 import Help from "./containers/Help"
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {Route, Routes } from 'react-router-dom'
 require("./index.css");
 
 function App() {
