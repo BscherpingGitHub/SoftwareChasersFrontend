@@ -1,5 +1,5 @@
 .info {
-  height: 76%;
+  height: 80%;
   width: 85%;
   margin-top: 20px;
   padding: 5px;
@@ -27,7 +27,7 @@
 .gif {
   display: inline;
   float: right;
-  margin-right: 600px;
+  margin-right: 400px;
   margin-top: 5px;
   height: 75px;
   width: 70px;
