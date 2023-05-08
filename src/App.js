@@ -5,12 +5,10 @@ require("./index.css");
 
 function App() {
   return (
-    <BrowserRouter>
-    <Routes>
-    <Route Component={Home} exact path = '/'/>
-    <Route Component={Help} exact path = '/Help'/>
-    </Routes>
-    </BrowserRouter>
+      <Routes>
+        <Route Component={Home} exact path = '/'/>
+        <Route Component={Help} exact path = '/Help'/>
+      </Routes>
   );
 }
 
