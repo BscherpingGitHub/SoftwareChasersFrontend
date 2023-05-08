@@ -4,7 +4,7 @@
   overflow: auto;
   background-image: url("/public/paper\ background.avif");
   border-radius: 25px;
-  padding: 25px;
+  padding: 15px;
 }
 
 .readyText {
@@ -13,7 +13,6 @@
 }
 
 .pdfWrapper{
-
   width: 100%;
   height: 100%;
   background-image: url("/public/paper\ background.avif");
