@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SoftwareChasersFrontend/static/css/main.f0f1f176.css",
-    "main.js": "/SoftwareChasersFrontend/static/js/main.304996ec.js",
+    "main.css": "/SoftwareChasersFrontend/static/css/main.0b93f0b9.css",
+    "main.js": "/SoftwareChasersFrontend/static/js/main.c66bc890.js",
     "static/media/einstein_gif.gif": "/SoftwareChasersFrontend/static/media/einstein_gif.b66273811b96b6ac6c33.gif",
     "static/media/paper background.avif": "/SoftwareChasersFrontend/static/media/paper background.dacaca9d35767cb30780.avif",
     "static/media/67ZerosLogo.PNG": "/SoftwareChasersFrontend/static/media/67ZerosLogo.7d621f35a15c43a3762e.PNG",
@@ -9,11 +9,11 @@
     "static/media/probability-graph.PNG": "/SoftwareChasersFrontend/static/media/probability-graph.8313a94a1f30cc017b28.PNG",
     "static/media/numbers-graph.PNG": "/SoftwareChasersFrontend/static/media/numbers-graph.7c969a2f0cd7c42bb182.PNG",
     "index.html": "/SoftwareChasersFrontend/index.html",
-    "main.f0f1f176.css.map": "/SoftwareChasersFrontend/static/css/main.f0f1f176.css.map",
-    "main.304996ec.js.map": "/SoftwareChasersFrontend/static/js/main.304996ec.js.map"
+    "main.0b93f0b9.css.map": "/SoftwareChasersFrontend/static/css/main.0b93f0b9.css.map",
+    "main.c66bc890.js.map": "/SoftwareChasersFrontend/static/js/main.c66bc890.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0f1f176.css",
-    "static/js/main.304996ec.js"
+    "static/css/main.0b93f0b9.css",
+    "static/js/main.c66bc890.js"
   ]
 }
