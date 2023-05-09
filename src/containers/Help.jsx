@@ -14,6 +14,7 @@ const Help = () => {
                     A number which has never been thought of. How hard can that be? Should be easy, right?. 
                     It may surprise you how big the number will have to be. We are looking for a number with a 99% probability of never being thought of. 
                     Let’s dig into some math.
+                </p>
                     <br/>
                     <br/>
                     &nbsp;
@@ -60,7 +61,6 @@ const Help = () => {
                         Is this number bigger than your previous number? May want to pick a number bigger than that.
                         Feel free to use different numbers to figure out the current time as each year this number will get bigger.
                     </p>
-                </p>
             </div>
 
             <div className ="Htwo">
@@ -69,7 +69,7 @@ const Help = () => {
                 <p class = "infoText">
                 This graph shows the distribution of numbers being picked. 
                 We can see the lower numbers will be picked more than the higher numbers (These numbers are multiped by 10 to a power). 
-                Now, the graph shows a number around 22 and 34 (number *10^22 ; number * 10^34) are pretty low and therefore, would be a good choice. 
+                Now, the graph shows a number around 22 and 34 (number *10<sup>22</sup> ; number * 10<sup>34</sup>) are pretty low and therefore, would be a good choice. 
                 But we are thinking of a number that has never been thought of. Let’s consult the probability graph below.  
                 </p>
             </div>
@@ -77,7 +77,7 @@ const Help = () => {
             <div className = "Hthree">
                 <div class = "graph2"></div>
                 <p class = "infoText">
-                    We can see that if you pick a number less than 45 (* 10^ 45), you have less than 50% chance of the number being thought of.  
+                    We can see that if you pick a number less than 45 * 10<sup>45</sup>, you have less than 50% chance of the number being thought of.  
                     Now after looking at this graph, do you think you can find a number which will give a 99% chance of never being thought of? 
                 </p>
                 <a href="#page"><Button

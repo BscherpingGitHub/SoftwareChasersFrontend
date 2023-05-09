@@ -14,7 +14,7 @@
 
 .pdfWrapper{
   width: 100%;
-  height: 100%;
+  height: 200px;
   background-image: url("/public/paper\ background.avif");
   border-radius: 25px;
   padding: 25px;

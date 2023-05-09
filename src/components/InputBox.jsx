@@ -23,6 +23,7 @@ const InputBox = () => {
   const [numErr, setNumErr] = useState(null);
   const [number, setNumber] = useState();
   const [chance, setChance] = useState();
+  const [numExist, setNumExist] = useState(false);
 
   var first;
   var last;
@@ -41,9 +42,6 @@ const InputBox = () => {
 
     const handleClick = async () => {
       setLoading(true);
-      // console.log(document.getElementById("firstName").value);
-      // console.log(document.getElementById("lastName").value);
-      // console.log(document.getElementById("number").value);
       first = document.getElementById("firstName").value;
       last = document.getElementById("lastName").value;
       setNumber(document.getElementById("number").value);
@@ -70,18 +68,16 @@ const InputBox = () => {
         generatePDF();
       }
 
-        // await superagent
-        //     .get(`http://acc5c208dae842ed3.awsglobalaccelerator.com:5000/check_data/${first}/${last}/${number}`)
-        //     // https://pokeapi.co/api/v2/pokemon/ditto
-        //     // http://127.0.0.1:5000/check_data/fname/lname/number
-        //     // .send({"fname": first,
-        //     //         "lname": last,
-        //     //         "number": number})
-        //     .set('X-API-Key', 'foobar')
-        //     .set('Accept', 'application/json')
-        //     .then(res => {
-        //         console.log(JSON.stringify(res.body))
-        //     }).catch(err => console.log(err))
+        await superagent
+            .get(`http://18.221.55.184:5000/?fname=${first}&lname=${last}&number=${tempNum}`)
+            .set('X-API-Key', 'foobar')
+            .set('Accept', 'application/json')
+            .then(res => {  
+              console.log(JSON.stringify(res.body.error))
+              if(JSON.stringify(res.body.error) === "-1"){
+                setNumExist(true);
+              }
+            }).catch(err => console.log(err))
     }
 
     return (
@@ -141,6 +137,20 @@ const InputBox = () => {
     
     <div>
     {
+    numExist ? 
+    <div className="pdfWrapper">
+    <p className="readyText">
+      It looks like someone has already thought of that number before! Please try again.
+    </p>
+    <Button
+        variant="primary"
+        style={{ float: "right", marginTop: "40px", height: "54px", width: "125px", marginRight: "5px"}}
+        onClick={() => {setShowPDF(false); setNumErr(false); setNumExist(false)}}
+      >
+        Try again
+      </Button>
+  </div>
+    :
     showPDF ? 
       <div className="pdfWrapper">
         <p className="readyText">Congratulations! The number you chose has a 99% chance of never being thought of. 
@@ -160,7 +170,7 @@ const InputBox = () => {
     :
     numErr ? 
     <div className="inputWrapper">
-      <p className="readyText">You picked the number {number} was determined to have a {chance}% chance of never being thought of. 
+      <p className="readyText">The number {number} has a {chance}% chance of NEVER being thought of. 
         This was calculated by the equations on the help page. </p>
         <a href="#Hpage">
           <Button
